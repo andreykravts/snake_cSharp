@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Snake_OPP_Csharp
 {
@@ -6,100 +7,82 @@ namespace Snake_OPP_Csharp
     {
         static void Main(string[] args)
         {
-            ////*that part of code is incapsulation, because we use "point" but didt see how it works
-            ////put new values
-            //Point p1 = new Point(1,3,'*');//we send values to the parametrs in the class point
-            //p1.Draw(); 
-            //// print the dot 
-            ////second dot
-            //Point p2 = new Point(5, 4, '#');//we send values to the parametrs in the class point
-            //p2.Draw();
-            //// print the dot 
+            //*that part of code is incapsulation, because we use "point" but didt see how it works
+            //put new values
+            Point p1 = new Point(1, 3, '*');//we send values to the parametrs in the class point
+            p1.Draw();
+            // print the dot 
+            //second dot
+            Point p2 = new Point(5, 4, '#');//we send values to the parametrs in the class point
+            p2.Draw();
+            // print the dot 
 
-            /*Lesson5 RAM*/
-            int x = 1;
-            x = 1;
-            Func1(x);
-            Console.WriteLine("call Func1. x = " + x);
-            x = 1;
-            Func2(x);
-            Console.WriteLine("call Func2. x = "+x);
+            #region List part
+            List<int> numList = new List<int>();
 
-            x = 1;
-            Func3(x);
-            Console.WriteLine("call Func3. x = " + x);
+            // input some nubers into the numList
+            numList.Add(0);
+            numList.Add(1);
+            numList.Add(2);
 
-            Point p1 = new Point(1, 3, '*');
-            //here p is address to some place in the ram
-            Move(p1, 10, 10);
-            Console.WriteLine("Call Move. p1.x = " + p1.x + ", p1.y = " + p1.y);
+            //call the numbers from the list with help of index [n]
 
-            Point p2 = new Point(4, 5, '*');
-            Reset(p2);
+            int x = numList[0];
+            int y = numList[1];
+            int z = numList[2];
 
+            //to print all list we can use a loop "foreach loop"
+            foreach (int i in numList) // i is parametr for [index] into newList
+            {
+                Console.WriteLine(i);
+            }
 
+            //to remove some part of list use this statment:
+            numList.RemoveAt(0); // that function we be remove the number in cell [0] 
+            #endregion list part
 
-            Point p2 = new Point(4, 5, '*');
-            p1 = p2;
-            p2.x = 8;
-            p2.y = 8;
-            Console.WriteLine(" p1 = p2. p1.x = " + p1.x + ", p1.y = " + p1.y + " ; p2.x = "+p2.x+" , p2.y = " + p2.y);
+            //on the base list part we will create a list that can be use for dot p1 p2
+            #region Listpoint
 
-            p1 = new Point(1,3,'*');
-            Update(p1);
-            Console.WriteLine("Call Move. p1.x = "+p1.x+ ", p1.y = " +p1.y);
+            List<Point> PointList = new List<Point>();
 
-
-            Console.ReadKey();
-        }
-        /// <summary>
-        /// another function
-        /// </summary>
-        /// <param name="value">value is a copy of parametr x but it is antother parametr (value and x is not same object)</param>
-        public static void Func1(int value)
-        {
-
-        }
-        /// <summary>
-        /// another function
-        /// </summary>
-        /// <param name="value">value is a copy of parametr x but it is antother parametr (value and x is not same object)</param>
-        public static void Func2(int value)
-        {
-            value = value + 1; // is value changed but not at x. parametr x stay same. * another stack
-        }
-        /// <summary>
-        /// another function
-        /// </summary>
-        /// <param name="x">THIS "x" is a copy of parametr x but it is antother parametr (this x and x from program is not same object)  * another stack</param>
-        public static void Func3(int x)
-        {
-            x = x + 1;
-        }
-        /// <summary>
-        /// here p is address to some place in the ram
-        /// </summary>
-        /// <param name="p"> its not the same p1 that just copy in another part of ram</param>
-        /// <param name="dx">move by x</param>
-        /// <param name="dy">move by y</param>
-        public static void Move(Point p, int dx, int dy)
-        {
-            p.x = p.x + dx;
-            p.y = p.y + dy;
-        }
-        /// <summary>
-        /// this function make reset position of point p 
-        /// </summary>
-        /// <param name="p">Addres to the position that do you want to set for Point p</param>
-        public static void Reset(Point p)
-        {
-            p = new Point(); // here function is write new addres of "pointer" to p
-        }
             
 
-        public static void Update(Point p)
-        {
+            #region Point for pointList
+            //new dots for our Point list and there their initialization
+            Point p3 = new Point(9, 16, 'a');//we send values to the parametrs in the class point
+            p3.Draw();
+            Point p4 = new Point(64, 4, 'b');//we send values to the parametrs in the class point
+            p4.Draw();
+            Point p5 = new Point(25, 36, 'c');//we send values to the parametrs in the class point
+            p5.Draw();
+            Point p6 = new Point(49, 1, 'd');//we send values to the parametrs in the class point
+            p6.Draw();
+            Point p7 = new Point(1, 1, 'f');//we send values to the parametrs in the class point
+            p7.Draw();
+            #endregion
 
+            //PointList
+            PointList.Add(p1);
+            PointList.Add(p2);
+            PointList.Add(p3);
+            PointList.Add(p4);
+            PointList.Add(p5);
+            PointList.Add(p6);
+            PointList.Add(p7);
+            
+
+
+            //to print all PointList list we can use a loop "foreach loop"
+            foreach (int i in numList) // i is parametr for [index] into newList
+            {
+                Console.WriteLine(i);
+            }
+
+
+            #endregion Listpoint
+
+            Console.ReadKey();
         }
 
     }
