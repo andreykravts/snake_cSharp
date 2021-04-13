@@ -1,0 +1,5 @@
+C:\Users\Andre\Dropbox\My PC (DESKTOP-BETJF45)\Desktop\C# SNAKE REPOSITORY OPP + C#\NewSnake\snake\obj\Debug\net5.0\snake.csprojAssemblyReference.cache
+C:\Users\Andre\Dropbox\My PC (DESKTOP-BETJF45)\Desktop\C# SNAKE REPOSITORY OPP + C#\NewSnake\snake\obj\Debug\net5.0\snake.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andre\Dropbox\My PC (DESKTOP-BETJF45)\Desktop\C# SNAKE REPOSITORY OPP + C#\NewSnake\snake\obj\Debug\net5.0\snake.AssemblyInfoInputs.cache
+C:\Users\Andre\Dropbox\My PC (DESKTOP-BETJF45)\Desktop\C# SNAKE REPOSITORY OPP + C#\NewSnake\snake\obj\Debug\net5.0\snake.AssemblyInfo.cs
+C:\Users\Andre\Dropbox\My PC (DESKTOP-BETJF45)\Desktop\C# SNAKE REPOSITORY OPP + C#\NewSnake\snake\obj\Debug\net5.0\snake.csproj.CoreCompileInputs.cache

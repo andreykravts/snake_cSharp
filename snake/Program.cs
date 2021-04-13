@@ -34,8 +34,8 @@ namespace Snake_OPP_Csharp
             Move(p1, 10, 10);
             Console.WriteLine("Call Move. p1.x = " + p1.x + ", p1.y = " + p1.y);
 
-            Point p2 = new Point(4, 5, '*');
-            Reset(p2);
+            Point p2r = new Point(4, 5, '*');
+            Reset(p2r);
 
 
 
