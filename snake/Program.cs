@@ -17,18 +17,21 @@ namespace Snake_OPP_Csharp
             p2.Draw();
             // print the dot 
 
+            #region make Horizontal line
             //Here we want to print our horizontal line
             //We need to initialize this object with parametrs
             // to build a line we need x1 from to x2 in the line y with symbol sym 
             HorizontalLine lineH = new HorizontalLine(0,10,0,'W');
             lineH.Draw();
+            #endregion
 
+            #region make Vertical line
             //Here we want to print our vertical line
             //We need to initialize this object with parametrs
             // to build a line we need (Start from position)y1 from to (end after reaching position) y2 in the line x with symbol sym 
             VerticalLine lineV = new VerticalLine(0, 10, 0, 'W');
             lineV.Draw();
-
+            #endregion
 
             #region//commented
             //commented

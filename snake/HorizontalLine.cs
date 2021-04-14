@@ -8,16 +8,22 @@ namespace Snake_OPP_Csharp
 {
     class HorizontalLine
     {
-
-        // here we want to create a list that gona make a borders for our snake
-        //lets star from list
+        /// <summary>
+        /// here we want to create a list that gona make a borders for our snake
+        ///lets star from list
+        /// </summary>
+      
         List<Point> horizontalLine;
 
-        //now we need  constructor with initialization
 
-
-        // consructor with initialization parametrs 
-
+        /// <summary>
+        /// now we need  constructor with initialization
+        /// consructor with initialization parametrs 
+        /// </summary>
+        /// <param name="xleft">start from </param>
+        /// <param name="xright">go to</param>
+        /// <param name="y">in the line </param>
+        /// <param name="sym">put some symbol</param>
         public HorizontalLine(int xleft, int xright, int y, Char sym)
         {
             // New empty list
@@ -65,7 +71,9 @@ namespace Snake_OPP_Csharp
 
         }
         //to print these dots lets build another "Draw" method
-
+        /// <summary>
+        /// method that print the dots on the screen
+        /// </summary>
         public void Draw()
         {
             //to print all PointList list we can use a loop "foreach loop"
