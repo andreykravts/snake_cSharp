@@ -7,6 +7,7 @@ namespace Snake_OPP_Csharp
     {
         static void Main(string[] args)
         {
+            #region example from start
             //*that part of code is incapsulation, because we use "point" but didt see how it works
             //put new values
             Point p1 = new Point(1, 3, '*');//we send values to the parametrs in the class point
@@ -16,6 +17,7 @@ namespace Snake_OPP_Csharp
             Point p2 = new Point(5, 4, '#');//we send values to the parametrs in the class point
             p2.Draw();
             // print the dot 
+            #endregion
 
             #region make Horizontal line
             //Here we want to print our horizontal line
