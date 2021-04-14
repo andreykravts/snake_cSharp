@@ -7,7 +7,10 @@ namespace Snake_OPP_Csharp
     {
         static void Main(string[] args)
         {
-            #region example from start
+
+            //Console.SetBufferSize( 80, 25 );
+
+            #region example from start 
             //*that part of code is incapsulation, because we use "point" but didt see how it works
             //put new values
             Point p1 = new Point(1, 3, '*');//we send values to the parametrs in the class point
@@ -19,20 +22,34 @@ namespace Snake_OPP_Csharp
             // print the dot 
             #endregion
 
-            #region make Horizontal line
-            //Here we want to print our horizontal line
-            //We need to initialize this object with parametrs
-            // to build a line we need x1 from to x2 in the line y with symbol sym 
-            HorizontalLine lineH = new HorizontalLine(0,10,0,'W');
-            lineH.Draw();
+            #region Frame for game
+            ///here we start to build our frame for game
+            HorizontalLine upLine = new HorizontalLine(0, 78, 0, 'W');
+            HorizontalLine bottomLine = new HorizontalLine(0, 78, 24, 'W');
+            VerticalLine lineLeftSide = new VerticalLine(0, 24, 0, 'W');
+            VerticalLine lineRightSide = new VerticalLine(0, 24, 78, 'W');
+           
+            upLine.Draw();
+            bottomLine.Draw();
+            lineLeftSide.Draw();
+            lineRightSide.Draw();
             #endregion
 
-            #region make Vertical line
-            //Here we want to print our vertical line
-            //We need to initialize this object with parametrs
-            // to build a line we need (Start from position)y1 from to (end after reaching position) y2 in the line x with symbol sym 
-            VerticalLine lineV = new VerticalLine(0, 10, 0, 'W');
-            lineV.Draw();
+
+            #region make Horizontal line commented
+            ////Here we want to print our horizontal line
+            ////We need to initialize this object with parametrs
+            //// to build a line we need x1 from to x2 in the line y with symbol sym 
+            //HorizontalLine lineH = new HorizontalLine(0,10,0,'W');
+            //lineH.Draw();
+            #endregion
+
+            #region make Vertical line commented
+            ////Here we want to print our vertical line
+            ////We need to initialize this object with parametrs
+            //// to build a line we need (Start from position)y1 from to (end after reaching position) y2 in the line x with symbol sym 
+            //VerticalLine lineV = new VerticalLine(0, 10, 0, 'W');
+            //lineV.Draw();
             #endregion
 
             #region//commented

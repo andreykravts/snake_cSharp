@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace Snake_OPP_Csharp
 {
-    class VerticalLine
+    /// <summary>
+    /// we use inheritance here so we get:
+    /// class contains all functional of ""Figure" class
+    /// </summary>
+    class VerticalLine : Figure    
+        //*we gonna say that virticallina and horizontalline they just form of figure
+        //so we gonna delete some parts code(list and print method), because they belong to class figure
     {
         /// <summary>
         ///         here we want to create a list that gona make a borders for our snake
         ///lets star from list
         /// </summary>
-        List<Point> verticalLine;
+       
+        //we use list from class figure
+       
 
         /// <summary>
         /// now we need  constructor with initialization consructor with initialization parametrs 
@@ -25,7 +33,7 @@ namespace Snake_OPP_Csharp
         public VerticalLine(int y_up, int y_down ,int x, Char sym)
         {
             // New empty list
-            verticalLine = new List<Point>();
+            pList = new List<Point>();
 
             //here we put "for loop" to initialize points in our line
 
@@ -40,25 +48,14 @@ namespace Snake_OPP_Csharp
                 Point p = new Point(x, y, sym);
 
                 //There we make at initialization list with the p parameter p(x,y,sym) fro priviosly line
-                verticalLine.Add(p);
+                pList.Add(p);
             }
 
 
         }
         //to print these dots lets build another "Draw" method
-        /// <summary>
-        /// that method print our dots on the screen 
-        /// </summary>
-        public void Draw()
-        {
-            //to print all PointList list we can use a loop "foreach loop"
 
-
-            // we use parametr p  "class Point" for printing our dots on the screen 
-            foreach (Point p in verticalLine) // p is parametr for [index] into newList
-            {
-                p.Draw(); // we use this method "Draw" from class "Point"
-            }
-        }
+        // we use print from class figure
+       
     }
 }
