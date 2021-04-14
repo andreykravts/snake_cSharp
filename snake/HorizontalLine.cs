@@ -6,14 +6,21 @@ using System.Threading.Tasks;
 
 namespace Snake_OPP_Csharp
 {
-    class HorizontalLine
+    /// <summary>
+    /// we use inheritance here so we get:
+    /// class contains all functional of ""Figure" class
+    /// </summary>
+    class HorizontalLine : Figure
+    //*we gonna say that virticallina and horizontalline they just form of figure
+    //so we gonna delete some parts code (list and print method), because they belong to class figure
     {
+
         /// <summary>
         /// here we want to create a list that gona make a borders for our snake
         ///lets star from list
         /// </summary>
-      
-        List<Point> horizontalLine;
+
+        //we use list from class figure
 
 
         /// <summary>
@@ -27,7 +34,7 @@ namespace Snake_OPP_Csharp
         public HorizontalLine(int xleft, int xright, int y, Char sym)
         {
             // New empty list
-            horizontalLine = new List<Point>();
+            pList = new List<Point>();
 
             //here we put "for loop" to initialize points in our line
 
@@ -42,7 +49,7 @@ namespace Snake_OPP_Csharp
                 Point p = new Point(x, y, sym);
 
                 //There we make at initialization list with the p parameter p(x,y,sym) fro priviosly line
-                horizontalLine.Add(p);
+                pList.Add(p);
             }
 
 
@@ -61,12 +68,12 @@ namespace Snake_OPP_Csharp
 
             //Point p10 = new Point(2, 9, 'f');//we send values to the parametrs in the class point
 
-            //horizontalLine.Add(p5);
-            //horizontalLine.Add(p6);
-            //horizontalLine.Add(p7);
-            //horizontalLine.Add(p8);
-            //horizontalLine.Add(p9);
-            //horizontalLine.Add(p10);
+            //pList.Add(p5);
+            //pList.Add(p6);
+            //pList.Add(p7);
+            //pList.Add(p8);
+            //pList.Add(p9);
+            //pList.Add(p10);
             #endregion dots for example
 
         }
@@ -74,17 +81,8 @@ namespace Snake_OPP_Csharp
         /// <summary>
         /// method that print the dots on the screen
         /// </summary>
-        public void Draw()
-        {
-            //to print all PointList list we can use a loop "foreach loop"
 
-
-            // we use parametr p  "class Point" for printing our dots on the screen 
-            foreach (Point p in horizontalLine) // p is parametr for [index] into newList
-            {
-                p.Draw(); // we use this method "Draw" from class "Point"
-            }
-        }
+        // we use print from class figure
 
     }
 }
