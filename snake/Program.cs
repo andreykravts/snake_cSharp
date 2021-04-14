@@ -20,8 +20,14 @@ namespace Snake_OPP_Csharp
             //Here we want to print our horizontal line
             //We need to initialize this object with parametrs
             // to build a line we need x1 from to x2 in the line y with symbol sym 
-            HorizontalLine line = new HorizontalLine(1,10,2,'W');
-            line.Draw();
+            HorizontalLine lineH = new HorizontalLine(0,10,0,'W');
+            lineH.Draw();
+
+            //Here we want to print our vertical line
+            //We need to initialize this object with parametrs
+            // to build a line we need (Start from position)y1 from to (end after reaching position) y2 in the line x with symbol sym 
+            VerticalLine lineV = new VerticalLine(0, 10, 0, 'W');
+            lineV.Draw();
 
 
             #region//commented
@@ -56,7 +62,7 @@ namespace Snake_OPP_Csharp
 
             //List<Point> PointList = new List<Point>();
 
-            
+
 
             //#region Point for pointList
             ////new dots for our Point list and there their initialization
@@ -80,7 +86,7 @@ namespace Snake_OPP_Csharp
             //PointList.Add(p5);
             //PointList.Add(p6);
             //PointList.Add(p7);
-            
+
 
 
             ////to print all PointList list we can use a loop "foreach loop"
