@@ -16,12 +16,6 @@ namespace Snake_OPP_Csharp
         protected List<Point> pList;
 
 
-
-
-
-
-
-
         /// <summary>
         /// method that print the dots on the screen
         /// </summary>

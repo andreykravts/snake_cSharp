@@ -103,5 +103,14 @@ namespace Snake_OPP_Csharp
         {
             return x+ ", "+y+", "+sym;
         }
+
+        /// <summary>
+        /// this method is clear a point(what was create before) on the screen
+        /// </summary>
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
     }
 }

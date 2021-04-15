@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Snake_OPP_Csharp
 {
@@ -41,6 +42,46 @@ namespace Snake_OPP_Csharp
             Snake snake = new Snake(p,8,Direction.RIGHT);
             snake.Draw();
             //Print object snake
+
+
+            //we gonna learn our snake to move
+            ///this method is making our snake move foward for one step
+            snake.Move();
+
+            #region example of moving snake
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            #endregion
+
+
             #endregion
 
             #region make Horizontal line commented
