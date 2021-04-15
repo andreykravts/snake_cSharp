@@ -80,6 +80,21 @@ namespace Snake_OPP_Csharp
             head.Draw();
         }
 
+        /// <summary>
+        /// now is snake class giving to us method that have a functional of control movening our snake 
+        /// </summary>
+        /// <param name="key">this thing is check that key(arrow) on keyboard you puch and change direction of snake </param>
+        public void HandlingKey(ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow)
+                direction = Direction.LEFT;
+            else if (key == ConsoleKey.RightArrow)
+                direction = Direction.RIGHT;
+            else if (key == ConsoleKey.DownArrow)
+                direction = Direction.DOWN;
+            else if (key == ConsoleKey.UpArrow)
+                direction = Direction.UP;
+        }
 
         ///the result of work next method is some object of class point
         public Point GetNextPoint()
