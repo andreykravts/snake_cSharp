@@ -9,7 +9,7 @@ namespace Snake_OPP_Csharp
         static void Main(string[] args)
         {
 
-            //Console.SetBufferSize( 80, 25 );
+            
 
             #region example from start commented
             ////*that part of code is incapsulation, because we use "point" but didt see how it works
@@ -39,49 +39,96 @@ namespace Snake_OPP_Csharp
             #region Snake object
             //Create object Snake and initialize it with parametrs
             Point p = new Point(5, 5, 'O');
-            Snake snake = new Snake(p,8,Direction.RIGHT);
-            snake.Draw();
+
+            Snake snake = new Snake(p,2,Direction.RIGHT);
+
             //Print object snake
+            snake.Draw();
 
 
-            //we gonna learn our snake to move
-            ///this method is making our snake move foward for one step
-            snake.Move();
+            ///new realization with the part "food"
 
-            #region example of moving snake
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            #endregion
+            ///*************the call food creator
+
+            ///food creator class 3 parameters
+            ///this class is generate a points of food
+            FoodCreator foodCreator = new FoodCreator(80, 25,'$' );
+
+            ///create point food on the screen
+            ///create a point in the random place on the screen
+            Point food = foodCreator.CreateFood();
+
+            //print the point food on the screen
+            food.Draw();
+
+                                            ///we gonna learn our snake to move and eat
+           
+                                            ///while loop is infiniti
+                                            ///here we creater a food
+            while (true) {
+                if (snake.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
+                Thread.Sleep(100);
 
 
+                ///here checking the key on key board and on the base of meaning key, the snake start move by direction of input
+                if (Console.KeyAvailable)                       //system function
+                {
+                    ///this function is work with the meaning of key on the keyboard that was pushed
+                    ConsoleKeyInfo key = Console.ReadKey();     //system function
+
+                    ///here we call our keyboard control method
+                    snake.HandlingKey(key.Key);
+                }
+
+                ///just a little pause
+                Thread.Sleep(100);
+
+                ///this method is making our snake move foward for num of steps
+                snake.Move();
+            }
+
+            #endregion Snake object
+
+            #region commented code
+            #region example of moving snake commented
+            //snake.Move(); // make move our snake
+            //Thread.Sleep(300); // make the screen stop for 300 mlsec
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
+            //snake.Move();
+            //Thread.Sleep(300);
             #endregion
 
             #region make Horizontal line commented
@@ -170,7 +217,8 @@ namespace Snake_OPP_Csharp
 
             #endregion//commented
 
-            Console.ReadKey();
+            #endregion
+
         }
 
     }

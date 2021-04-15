@@ -47,7 +47,6 @@ namespace Snake_OPP_Csharp
 
         }
 
-
         //Move method
 
         /// <summary>
@@ -111,6 +110,18 @@ namespace Snake_OPP_Csharp
         {
             sym = ' ';
             Draw();
+        }
+
+        /// <summary>
+        /// that method is working on check of point/dot so we place him in point class
+        /// here we check if our snake reached a food and get meaning true/false.
+        /// </summary>
+        /// <param name="p">point/dot that we want to check (if snake reached a food)</param>
+        /// <returns>true-reached a food /false- dont reached a food</returns>
+        public bool IsHit(Point p)
+        {
+            ///that part is checking if parametrs snake's points  is equal to parametrs of food's point 
+            return p.x == this.x && p.y == this.y;
         }
     }
 }
