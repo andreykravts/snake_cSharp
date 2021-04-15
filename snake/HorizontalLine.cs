@@ -53,36 +53,36 @@ namespace Snake_OPP_Csharp
             }
 
 
-            #region dots for example commented
 
-            ////lets put some dots for example
-            //Point p5 = new Point(2,4, 'c');//we send values to the parametrs in the class point
-
-            //Point p6 = new Point(2, 5, 'd');//we send values to the parametrs in the class point
-
-            //Point p7 = new Point(2, 6, 'f');//we send values to the parametrs in the class point
-
-            //Point p8 = new Point(2, 7, 'c');//we send values to the parametrs in the class point
-
-            //Point p9 = new Point(2, 8, 'd');//we send values to the parametrs in the class point
-
-            //Point p10 = new Point(2, 9, 'f');//we send values to the parametrs in the class point
-
-            //pList.Add(p5);
-            //pList.Add(p6);
-            //pList.Add(p7);
-            //pList.Add(p8);
-            //pList.Add(p9);
-            //pList.Add(p10);
-            #endregion dots for example
 
         }
         //to print these dots lets build another "Draw" method
         /// <summary>
-        /// method that print the dots on the screen
+        /// special method that print  the color dots of horizontal line on the screen
         /// </summary>
 
-        // we use print from class figure
+        //* we use print from class figure ---- not today!
+
+        public override void Draw()
+        {
+            ///these changes we do SPECIAL for method draw in horizontal line
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+
+            //here we write same code,that useless]
+
+            //foreach(Point p in pList)
+            //{
+            //    p.Draw();
+            //}
+
+
+            ///usefull use base realization of code in figure class
+            base.Draw();
+
+            ///these changes we do SPECIAL for method draw in horizontal line
+            Console.ForegroundColor = ConsoleColor.White;
+        }
 
     }
 }

@@ -18,8 +18,10 @@ namespace Snake_OPP_Csharp
 
         /// <summary>
         /// method that print the dots on the screen
+        /// 
+        /// make this method virtual for using method draw with option to change a method, on special figures 
         /// </summary>
-        public void Draw()
+        public virtual void Draw()
         {
             //to print all PointList list we can use a loop "foreach loop"
 

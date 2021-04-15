@@ -9,169 +9,132 @@ namespace Snake_OPP_Csharp
         static void Main(string[] args)
         {
 
-            //Console.SetBufferSize( 80, 25 );
 
-            #region example from start commented
-            ////*that part of code is incapsulation, because we use "point" but didt see how it works
-            ////put new values
-            //Point p1 = new Point(1, 3, '*');//we send values to the parametrs in the class point
-            //p1.Draw();
-            //// print the dot 
-            ////second dot
-            //Point p2 = new Point(5, 4, '#');//we send values to the parametrs in the class point
-            //p2.Draw();
-            //// print the dot 
-            #endregion
+            #region new test code
 
-            #region Frame for game
-            ///here we start to build our frame for game
-            HorizontalLine upLine = new HorizontalLine(0, 78, 0, 'W');
-            HorizontalLine bottomLine = new HorizontalLine(0, 78, 24, 'W');
-            VerticalLine lineLeftSide = new VerticalLine(0, 24, 0, 'W');
-            VerticalLine lineRightSide = new VerticalLine(0, 24, 78, 'W');
-           
-            upLine.Draw();
-            bottomLine.Draw();
-            lineLeftSide.Draw();
-            lineRightSide.Draw();
-            #endregion
+            VerticalLine vl = new VerticalLine(0, 10, 50, '-');
+            Draw(vl);
+            Point p = new Point(7,7,'7');
 
-            #region Snake object
-            //Create object Snake and initialize it with parametrs
-            Point p = new Point(5, 5, 'O');
-            Snake snake = new Snake(p,8,Direction.RIGHT);
-            snake.Draw();
-            //Print object snake
+            ///now snake is a figure and it have behavior of figure
+            ///that's mean if we want use uniqal methods of snake we cant
+            Figure Fsnake = new Snake(p, 4, Direction.RIGHT);
+            Draw(Fsnake);
 
+            //Fsnake.Move(); // error
 
-            //we gonna learn our snake to move
-            ///this method is making our snake move foward for one step
-            snake.Move();
+            ///for use unique methods of class snake we may insert Fsnake into snake with change type to snake 
+            ///now with snake we can use uniq methods of class snake
+            Snake snake = (Snake)Fsnake;
 
-            #region example of moving snake
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            #endregion
+            snake.Move();   // worked
 
+            HorizontalLine hl = new HorizontalLine(0, 10, 10, '+');
+
+            List<Figure> figures = new List<Figure>();
+
+            figures.Add(Fsnake);
+            figures.Add(vl);
+            figures.Add(hl);
+
+            foreach (var f in figures)
+            {
+                f.Draw();
+            }
 
             #endregion
 
-            #region make Horizontal line commented
-            ////Here we want to print our horizontal line
-            ////We need to initialize this object with parametrs
-            //// to build a line we need x1 from to x2 in the line y with symbol sym 
-            //HorizontalLine lineH = new HorizontalLine(0,10,0,'W');
-            //lineH.Draw();
-            #endregion
-
-            #region make Vertical line commented
-            ////Here we want to print our vertical line
-            ////We need to initialize this object with parametrs
-            //// to build a line we need (Start from position)y1 from to (end after reaching position) y2 in the line x with symbol sym 
-            //VerticalLine lineV = new VerticalLine(0, 10, 0, 'W');
-            //lineV.Draw();
-            #endregion
-
-            #region//commented
-            //commented
-
-            //#region List part
-            //List<int> numList = new List<int>();
-
-            //// input some nubers into the numList
-            //numList.Add(0);
-            //numList.Add(1);
-            //numList.Add(2);
-
-            ////call the numbers from the list with help of index [n]
-
-            //int x = numList[0];
-            //int y = numList[1];
-            //int z = numList[2];
-
-            ////to print all list we can use a loop "foreach loop"
-            //foreach (int i in numList) // i is parametr for [index] into newList
-            //{
-            //    Console.WriteLine(i);
-            //}
-
-            ////to remove some part of list use this statment:
-            //numList.RemoveAt(0); // that function we be remove the number in cell [0] 
-            //#endregion list part
-
-            ////on the base list part we will create a list that can be use for dot p1 p2
-            //#region Listpoint
-
-            //List<Point> PointList = new List<Point>();
+            #region
+            //#region Frame for game
+            //// here we start to build our frame for game
 
 
 
-            //#region Point for pointList
-            ////new dots for our Point list and there their initialization
-            //Point p3 = new Point(9, 16, 'a');//we send values to the parametrs in the class point
-            //p3.Draw();
-            //Point p4 = new Point(64, 4, 'b');//we send values to the parametrs in the class point
-            //p4.Draw();
-            //Point p5 = new Point(25, 36, 'c');//we send values to the parametrs in the class point
-            //p5.Draw();
-            //Point p6 = new Point(49, 1, 'd');//we send values to the parametrs in the class point
-            //p6.Draw();
-            //Point p7 = new Point(1, 1, 'f');//we send values to the parametrs in the class point
-            //p7.Draw();
+
+            //HorizontalLine upLine = new HorizontalLine(0, 78, 0, 'W');
+            //HorizontalLine bottomLine = new HorizontalLine(0, 78, 24, 'W');
+            //VerticalLine lineLeftSide = new VerticalLine(0, 24, 0, 'W');
+            //VerticalLine lineRightSide = new VerticalLine(0, 24, 78, 'W');
+
+            //upLine.Draw();
+            //bottomLine.Draw();
+            //lineLeftSide.Draw();
+            //lineRightSide.Draw();
             //#endregion
 
-            ////PointList
-            //PointList.Add(p1);
-            //PointList.Add(p2);
-            //PointList.Add(p3);
-            //PointList.Add(p4);
-            //PointList.Add(p5);
-            //PointList.Add(p6);
-            //PointList.Add(p7);
+            //#region Snake object
+            ////Create object Snake and initialize it with parametrs
+            //Point p = new Point(5, 5, 'O');
+
+            //Snake snake = new Snake(p, 2, Direction.RIGHT);
+
+            ////Print object snake
+            //snake.Draw();
 
 
+            /////new realization with the part "food"
 
-            ////to print all PointList list we can use a loop "foreach loop"
-            //foreach (int i in numList) // i is parametr for [index] into newList
+            /////*************the call food creator
+
+            /////food creator class 3 parameters
+            /////this class is generate a points of food
+            //FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+
+            /////create point food on the screen
+            /////create a point in the random place on the screen
+            //Point food = foodCreator.CreateFood();
+
+            ////print the point food on the screen
+            //food.Draw();
+
+            /////we gonna learn our snake to move and eat
+
+            /////while loop is infiniti
+            /////here we creater a food
+            //while (true)
             //{
-            //    Console.WriteLine(i);
+            //    if (snake.Eat(food))
+            //    {
+            //        food = foodCreator.CreateFood();
+            //        food.Draw();
+            //    }
+            //    else
+            //    {
+            //        snake.Move();
+            //    }
+            //    Thread.Sleep(100);
+
+
+            //    ///here checking the key on key board and on the base of meaning key, the snake start move by direction of input
+            //    if (Console.KeyAvailable)                       //system function
+            //    {
+            //        ///this function is work with the meaning of key on the keyboard that was pushed
+            //        ConsoleKeyInfo key = Console.ReadKey();     //system function
+
+            //        ///here we call our keyboard control method
+            //        snake.HandlingKey(key.Key);
+            //    }
+
+            //    ///just a little pause
+            //    Thread.Sleep(100);
+
+            //    ///this method is making our snake move foward for num of steps
+            //    snake.Move();
             //}
 
+            //#endregion Snake object
+            #endregion
 
-            //#endregion Listpoint
 
-            #endregion//commented
-
-            Console.ReadKey();
         }
 
-    }
+        #region new test code
+        static void Draw(Figure figure)
+        {
+            figure.Draw();
+        }
+
+        #endregion
+
+}
 }

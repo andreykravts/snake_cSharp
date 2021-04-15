@@ -80,6 +80,21 @@ namespace Snake_OPP_Csharp
             head.Draw();
         }
 
+        /// <summary>
+        /// now is snake class giving to us method that have a functional of control movening our snake 
+        /// </summary>
+        /// <param name="key">this thing is check that key(arrow) on keyboard you puch and change direction of snake </param>
+        public void HandlingKey(ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow)
+                direction = Direction.LEFT;
+            else if (key == ConsoleKey.RightArrow)
+                direction = Direction.RIGHT;
+            else if (key == ConsoleKey.DownArrow)
+                direction = Direction.DOWN;
+            else if (key == ConsoleKey.UpArrow)
+                direction = Direction.UP;
+        }
 
         ///the result of work next method is some object of class point
         public Point GetNextPoint()
@@ -94,6 +109,41 @@ namespace Snake_OPP_Csharp
             nextPoint.Move(1, direction); 
             ///this method is giving a back new dot/point to head after the moving process
             return nextPoint;
+        }
+
+
+        /// <summary>
+        /// so this method is make our snake get a food and grow
+        /// another just go forward
+        /// </summary>
+        /// <returns>true- yes a snake got a food and grow /false-no a snake didnt got a food and didnt grow</returns>
+        internal bool Eat(Point food)
+        {
+
+            //use method getnextpoint for add to head new dot/point
+            Point head = GetNextPoint(); 
+
+            //head of snake hit the food (function head activate is method ishit)
+            if (head.IsHit(food)) 
+            {
+
+                //if true
+
+                ///the symbol of food transfer to symbol of head (snake growing)
+                ///'$' trans to 'O'
+                food.sym = head.sym;  
+
+                // add food to list and remember
+                pList.Add(food);
+
+                //meaning of the method eat is true send true!
+                return true;
+            }
+            else
+            {
+                //meaning of the method eat is false send false!
+                return false;
+            }
         }
     }
 }
